@@ -4,9 +4,9 @@ const cors = require('cors');
 const port = 8002;
 
 const app = express();
-
-app.use(cors());
 app.use(express.json());
+app.use(cors());
+
 
 app.post('/encode', (req, res) => {
     const encode = Vigenere.Cipher(req.body.password).crypt(req.body.message);
